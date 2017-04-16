@@ -63,4 +63,8 @@ public class UserService {
         return null;
     }
 
+    public List<User> findList() {
+        UserExample example = new UserExample();
+        return userMapper.selectByExample(example);
+    }
 }

@@ -1,0 +1,9 @@
+html
+    head
+        title = pageName
+    body
+        include header.jade
+        ol#users
+            for user in users
+                li #{user.username}
+        include footer.jade

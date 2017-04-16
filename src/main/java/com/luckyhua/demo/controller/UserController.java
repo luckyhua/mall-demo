@@ -9,9 +9,11 @@ import com.luckyhua.demo.service.UserService;
 import com.luckyhua.demo.utils.AssertUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * 用户控制类
@@ -50,6 +52,16 @@ public class UserController {
         AssertUtils.isTrue(UserEnums.PASSWORD_LENGTH_ERROR, user.getPassword().length() >=6 && user.getPassword().length() <= 18);
         User registerUser = userService.register(user);
         return this.login(registerUser.getUsername(), registerUser.getPassword(), session);
+    }
+
+    @RequestMapping(value = "jade")
+    public String jade(Model model){
+        List<User> users = userService.findList();
+
+        model.addAttribute("users", users);
+        model.addAttribute("pageName", "My Bookshelf");
+
+        return "index";
     }
 
 }

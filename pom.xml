@@ -58,6 +58,12 @@
             <version>1.0.26</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.domingosuarez.boot</groupId>
+            <artifactId>spring-boot-starter-jade4j</artifactId>
+            <version>0.3.1</version>
+        </dependency>
+
         <!-- 支持 @ConfigurationProperties 注解 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -179,6 +185,7 @@
                         <artifactId>mybatis</artifactId>
                         <version>3.4.0</version>
                     </dependency>
+
                 </dependencies>
                 <executions>
                     <execution>
